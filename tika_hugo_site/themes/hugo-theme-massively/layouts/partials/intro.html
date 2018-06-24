@@ -1,0 +1,16 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.intro }}
+<div id="intro">
+    <h1>
+        Hi 
+    </h1>
+    <p>
+        {{ range $i, $e := .description }}
+            {{ if $i }} <br/> {{ end }} {{ .line }}
+        {{ end }}
+    </p>
+    <ul class="actions">
+        <li><a href="#header" class="button icon solo fa-arrow-down scrolly">some</a></li>
+    </ul>
+</div>
+{{ end }}
